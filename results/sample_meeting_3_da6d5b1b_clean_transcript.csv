@@ -1,0 +1,13 @@
+speaker_id,speaker_name,start,end,text
+SPEAKER_02,Anita,0.0,10.48,"Alright team, let's begin. I'm Anita and today's meeting is about reviewing progress  on a website redesign project. Please share what you've completed since last week"
+SPEAKER_01,Rahul,10.48,31.12,"and let's stick to the agenda. Hi everyone, Rahul here. I've finished the homepage redesign  and uploaded the files on Figma. I also created a mobile version. There's a small issue with  the navigation bar on tablets. But I'll fix it by Friday. Thanks Rahul. That's important."
+SPEAKER_03,Priya,31.12,49.28,Please prioritize fixing that issue quickly. This is Priya. I completed the login and sign-up  modules and connected them to the backend. The API documentation is also updated in confluence.  The only pending task is Google OAuth. We still don't have the credentials from IT.
+SPEAKER_02,Anita,49.28,55.52," Good progress, Priya. We'll follow up with IT to get that sorted. Hi team, Karen here."
+SPEAKER_00,Speaker,56.4,61.04," Before I share my updates, did anyone watch the India vs Pakistan match yesterday?"
+SPEAKER_02,Anita,61.92,68.96," That last over was unbelievable. Karan, let's keep the cricket chat for later. Please give us your update."
+SPEAKER_00,Speaker,69.6,90.0,"Oh, right, sorry. I tested the contact form and found two bugs. The email validation isn't  working properly and the submit button sometimes freezes. I've logged both in Jira. I'll handle  the validation bug myself, but the submit issue may need back and support. Yeah, I noticed the validation"
+SPEAKER_01,Rahul,90.0,96.88, problem too when testing the prototype. Good that you got it. Agreed that bug needs fixing before
+SPEAKER_00,Speaker,96.88,108.8,"deployment. Absolutely, I'll handle it. By the way, I think the site could look more appealing if we  added some animations to the homepage. I saw some really cool ideas online."
+SPEAKER_02,Anita,109.84,116.48," Animations are nice, but they're not our priority. First, we need the core features working smoothly."
+SPEAKER_03,Priya,116.48,123.84," Exactly. We can consider animations once the main modules are stable. Fair enough, I'll focus on"
+SPEAKER_02,Anita,123.84,157.04,"finishing the fixist first. All right, let's quickly recap. Rahul has redesigned the home page  and will fix the tablet navigation issue. Rahul has completed the login and sign-up flow  with the OAuth pending from IT. Karan tested the forms, found two bugs, and will fix validation.  Our priorities for the next sprint are bug fixes and OAuth integration. Is everyone aligned? Yes,  sounds good. Works for me. Yep, I'm on it. Perfect. Thanks, everyone. Meeting adjourned."

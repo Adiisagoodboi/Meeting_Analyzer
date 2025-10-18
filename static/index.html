@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meeting Analyzer — Upload</title>
+  <!-- keep your path (server/static) unchanged so existing JS works -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="page-bg">
+    <!-- BLUE HEADER BAR -->
+    <header class="blue-header">
+      <div class="container header-bar">
+        <h1 class="blue-title">BLUE MINUTES</h1>
+        <p class="header-sub muted">Upload audio to get a detailed analysis of speaker contribution.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <main>
+        <section class="uploader card" id="uploaderCard" aria-labelledby="uploaderLabel">
+          <label id="uploaderLabel" class="label">Select audio file</label>
+
+          <!-- visually-centered file input area -->
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Select or drop an audio file">
+            <input id="audioFile" type="file" accept="audio/*" />
+            <div class="drop-inner">
+              <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-2zM13 3h-2v8H8l4 4 4-4h-3V3z"/>
+              </svg>
+              <div class="drop-text">
+                <div class="bold">Drop audio here</div>
+                <div class="muted small">or click to browse — mp3 · wav · m4a</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row actions" style="margin-top:14px;">
+            <button id="uploadBtn" class="btn primary">Upload &amp; Process</button>
+            <button id="cancelBtn" class="btn secondary" style="display:none">Cancel</button>
+            <div id="status" class="muted status-text">idle</div>
+          </div>
+
+          <div id="progressWrap" class="progress-area" aria-hidden="true">
+            <div class="progressOuter" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div id="progressBar" class="progressInner"></div>
+            </div>
+            <div id="progressMsg" class="muted" style="margin-top:8px">waiting…</div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card" id="dialogueCard">
+            <h2>Dialogue <span class="muted small"> (speaker → utterance)</span></h2>
+            <div id="dialogue" class="scroll" aria-live="polite">
+              <!-- dynamic transcript rows will appear here -->
+            </div>
+          </div>
+
+          <div class="right-column">
+            <div class="card" id="visualCard">
+              <h2>Speaking Duration</h2>
+              <div id="pieWrap" class="center">
+                <img id="pieImg" alt="pie chart" style="max-width:100%; display:none" />
+                <canvas id="pieCanvas" width="260" height="260" style="display:none"></canvas>
+              </div>
+              <div id="legend" class="legend"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Centered Work In Progress card — now below the two main cards -->
+        <section class="wip-section">
+          <div class="card wip-card" id="wipCard">
+            <h2>WORK IN PROGRESS</h2>
+            <div class="muted">Placeholder for upcoming features , Member Contribution ,Points awards and more!</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-left muted small">Transcript tools</div>
+        <div class="footer-right">
+          <button id="copyBtn" class="btn">Copy Transcript</button>
+          <button id="dlBtn" class="btn secondary">Download .txt</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- keep script.js path unchanged -->
+  <script src="/static/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.6,
+    "text": " Alright team, let's begin. I'm Anita and today's meeting is about reviewing progress"
+  },
+  {
+    "start": 5.6,
+    "end": 10.48,
+    "text": " on a website redesign project. Please share what you've completed since last week"
+  },
+  {
+    "start": 10.48,
+    "end": 17.04,
+    "text": " and let's stick to the agenda. Hi everyone, Rahul here. I've finished the homepage redesign"
+  },
+  {
+    "start": 17.04,
+    "end": 23.6,
+    "text": " and uploaded the files on Figma. I also created a mobile version. There's a small issue with"
+  },
+  {
+    "start": 23.6,
+    "end": 31.12,
+    "text": " the navigation bar on tablets. But I'll fix it by Friday. Thanks Rahul. That's important."
+  },
+  {
+    "start": 31.12,
+    "end": 37.04,
+    "text": " Please prioritize fixing that issue quickly. This is Priya. I completed the login and sign-up"
+  },
+  {
+    "start": 37.04,
+    "end": 43.76,
+    "text": " modules and connected them to the backend. The API documentation is also updated in confluence."
+  },
+  {
+    "start": 43.76,
+    "end": 49.28,
+    "text": " The only pending task is Google OAuth. We still don't have the credentials from IT."
+  },
+  {
+    "start": 49.28,
+    "end": 55.52,
+    "text": " Good progress, Priya. We'll follow up with IT to get that sorted. Hi team, Karen here."
+  },
+  {
+    "start": 56.4,
+    "end": 61.04,
+    "text": " Before I share my updates, did anyone watch the India vs Pakistan match yesterday?"
+  },
+  {
+    "start": 61.92,
+    "end": 68.96,
+    "text": " That last over was unbelievable. Karan, let's keep the cricket chat for later. Please give us your update."
+  },
+  {
+    "start": 69.6,
+    "end": 76.0,
+    "text": " Oh, right, sorry. I tested the contact form and found two bugs. The email validation isn't"
+  },
+  {
+    "start": 76.16,
+    "end": 82.72,
+    "text": " working properly and the submit button sometimes freezes. I've logged both in Jira. I'll handle"
+  },
+  {
+    "start": 82.72,
+    "end": 90.0,
+    "text": " the validation bug myself, but the submit issue may need back and support. Yeah, I noticed the validation"
+  },
+  {
+    "start": 90.0,
+    "end": 96.88,
+    "text": " problem too when testing the prototype. Good that you got it. Agreed that bug needs fixing before"
+  },
+  {
+    "start": 96.88,
+    "end": 103.68,
+    "text": " deployment. Absolutely, I'll handle it. By the way, I think the site could look more appealing if we"
+  },
+  {
+    "start": 103.68,
+    "end": 108.8,
+    "text": " added some animations to the homepage. I saw some really cool ideas online."
+  },
+  {
+    "start": 109.84,
+    "end": 116.48,
+    "text": " Animations are nice, but they're not our priority. First, we need the core features working smoothly."
+  },
+  {
+    "start": 116.48,
+    "end": 123.84,
+    "text": " Exactly. We can consider animations once the main modules are stable. Fair enough, I'll focus on"
+  },
+  {
+    "start": 123.84,
+    "end": 130.08,
+    "text": " finishing the fixist first. All right, let's quickly recap. Rahul has redesigned the home page"
+  },
+  {
+    "start": 130.16,
+    "end": 135.52,
+    "text": " and will fix the tablet navigation issue. Rahul has completed the login and sign-up flow"
+  },
+  {
+    "start": 135.52,
+    "end": 141.92,
+    "text": " with the OAuth pending from IT. Karan tested the forms, found two bugs, and will fix validation."
+  },
+  {
+    "start": 141.92,
+    "end": 148.64,
+    "text": " Our priorities for the next sprint are bug fixes and OAuth integration. Is everyone aligned? Yes,"
+  },
+  {
+    "start": 148.64,
+    "end": 157.04,
+    "text": " sounds good. Works for me. Yep, I'm on it. Perfect. Thanks, everyone. Meeting adjourned."
+  }
+]
