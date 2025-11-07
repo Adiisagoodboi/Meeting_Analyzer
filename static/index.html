@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meeting Contribution Analyzer</title>
+  <!-- keep your path (server/static) unchanged so existing JS works -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="page-bg">
+    <!-- BLUE HEADER BAR -->
+    <header class="blue-header">
+      <div class="container header-bar">
+        <h1 class="blue-title">BLUE MINUTES</h1>
+        <p class="blue-subtitle muted">Upload audio to get a detailed analysis of speaker contribution.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <main>
+
+        <!-- ===== Uploader (single, canonical) ===== -->
+        <section class="uploader card" id="uploaderCard" aria-labelledby="uploaderLabel">
+          <label id="uploaderLabel" class="label">Select or Record Audio</label>
+
+          <!-- visually-centered file input area -->
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Select or drop an audio file">
+            <input id="audioFile" type="file" accept=".wav,.mp3,.m4a,.flac,.ogg,.opus,.weba,.aiff,.aac,audio/*" />
+            <div class="drop-inner" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-2zM13 3h-2v8H8l4 4 4-4h-3V3z" />
+              </svg>
+              <div class="drop-text">
+                <div class="bold">Drop audio here</div>
+                <div class="muted small">or click to browse — mp3 · wav · m4a</div>
+              </div>
+
+              <!-- choose button sits inside dropzone aligned to the right -->
+              <div class="choose-wrap" style="margin-left:auto">
+                <button id="chooseBtn" type="button" class="btn secondary small">Choose file</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- small file preview / info (populated by JS) -->
+          <div id="fileInfo" class="file-info" style="display:none;" aria-live="polite">
+            <div id="fileName" class="muted small"></div>
+            <audio id="filePreview" controls style="display:none;"></audio>
+          </div>
+
+          <!-- Recorder Controls -->
+          <div class="recorder" id="recorderPanel" style="margin-top:18px;">
+            <div class="row rec-controls" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+              <button id="recordBtn" class="btn">● Record</button>
+              <button id="pauseBtn" class="btn" disabled>⏸ Pause</button>
+              <button id="saveRecBtn" class="btn" disabled>💾 Save</button>
+              <button id="discardRecBtn" class="btn" disabled>✖ Discard</button>
+              <div id="recTimer" class="muted small">00:00</div>
+            </div>
+            <div class="rec-hint muted small" style="margin-top:6px;">
+              Use your microphone to record — it will upload just like a file.
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="row actions" style="margin-top:18px; display:flex; align-items:center; gap:12px;">
+            <button id="uploadBtn" class="btn primary">Upload &amp; Process</button>
+            <button id="cancelBtn" class="btn secondary" style="display:none">Cancel</button>
+            <div id="status" class="muted status-text" style="margin-left:auto">idle</div>
+          </div>
+
+          <!-- Progress area -->
+          <div id="progressWrap" class="progress-area" aria-hidden="true" style="display:none;">
+            <div class="progressOuter" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div id="progressBar" class="progressInner"></div>
+            </div>
+            <div id="progressMsg" class="muted" style="margin-top:8px">waiting…</div>
+          </div>
+        </section>
+
+        <!-- ===== Visual / Dialogue Row (dialogue + pie) ===== -->
+        <div class="grid" style="margin-top:22px; gap:20px;">
+          <!-- Dialogue card -->
+          <section class="card" id="dialogueCard" aria-labelledby="dialogueLabel" style="min-height:280px;">
+            <h2>Transcript / Dialogue</h2>
+            <div id="dialogue" style="min-height:160px;">
+              <!-- demo content or real dialogue is injected here by script.js -->
+            </div>
+          </section>
+
+          <!-- Visual card (pie or canvas) -->
+          <section class="card" id="visualCard" aria-labelledby="visualLabel" style="min-height:280px;">
+
+            <!-- prefer canvas for drawing, fallback to image -->
+            <canvas id="pieCanvas" width="600" height="400" style="width:100%; display:none;"></canvas>
+            <img id="pieImg" alt="Contribution pie chart" style="display:none; width:100%; height:auto; border-radius:8px;" />
+
+            <!-- optional legend area -->
+            <div id="legend" style="margin-top:12px;"></div>
+          </section>
+        </div>
+
+        <!-- Contribution analysis (hidden until data available) -->
+        <section class="card" id="analysisCard" aria-labelledby="analysisLabel" style="display:none; margin-top:22px;">
+          <h2 id="analysisLabel">Contribution Analysis</h2>
+
+          <div id="analysisBody" class="analysis-body">
+            <!-- Agenda -->
+            <div class="analysis-section" id="analysisAgenda" style="margin-bottom:14px;">
+              <h3 class="small muted">Agenda</h3>
+              <p id="analysisAgendaText" class="analysis-text">—</p>
+            </div>
+
+            <!-- Summary -->
+            <div class="analysis-section" id="analysisSummary" style="margin-bottom:14px;">
+              <h3 class="small muted">Summary</h3>
+              <p id="analysisSummaryText" class="analysis-text">—</p>
+            </div>
+
+            <!-- Speakers list (bars + feedback) -->
+            <div class="analysis-section" id="analysisSpeakersWrap">
+              <h3 class="small muted">Speakers</h3>
+              <div id="analysisSpeakers" class="speakers-list" style="margin-top:12px;">
+                <!-- JS will inject .speaker-row elements here -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== HOW IT WORKS SECTION ========== -->
+        <section id="how-it-works" class="how-it-works">
+          <div class="inner">
+            <h2>🔍 How It Works</h2>
+            <p class="intro">
+              The Meeting Analyzer processes your uploaded meeting audio using advanced AI pipelines.
+              Here’s how each stage contributes to generating the final structured insights:
+            </p>
+
+            <div class="steps-container">
+              <div class="step-card">
+                <h3>1️⃣ Upload & Input</h3>
+                <p>
+                  You start by uploading an audio file of your meeting. The system accepts common formats like <b>MP3</b>, <b>WAV</b>, or <b>M4A</b>.
+                </p>
+              </div>
+
+              <div class="step-card">
+                <h3>2️⃣ Speaker Diarization</h3>
+                <p>
+                  The first AI model identifies distinct speakers in the meeting audio.
+                </p>
+              </div>
+
+              <div class="step-card">
+                <h3>3️⃣ Automatic Speech Recognition (ASR)</h3>
+                <p>
+                  Diarized segments are transcribed to text for downstream analysis.
+                </p>
+              </div>
+
+              <div class="step-card">
+                <h3>4️⃣ Speaker Name Mapping</h3>
+                <p>
+                  The diarized labels are mapped to names where possible by matching cues or known profiles.
+                </p>
+              </div>
+
+              <div class="step-card">
+                <h3>5️⃣ Contribution Pie Chart</h3>
+                <p>
+                  Each speaker’s total speaking time is shown in a donut chart so you can see relative contribution.
+                </p>
+              </div>
+
+              <div class="step-card">
+                <h3>6️⃣ Scoring & Insights</h3>
+                <p>
+                  Retrieval-Augmented Generation (RAG) like algorithm that compares content to context and generates relevance/alignment insights.
+                </p>
+              </div>
+            </div>
+
+            <p class="closing-note" style="margin-top:22px;">
+              🎯 These stages transform raw meeting audio into structured summaries, speaker analytics, and RAG-based insights.
+            </p>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer" style="margin-top:28px;padding:20px">
+        <div class="footer-left muted small" style="font-size: 25px;">Transcript tools</div>
+        <div class="footer-right">
+          <button id="copyBtn" class="btn">Copy Transcript</button>
+          <button id="dlBtn" class="btn secondary">Download .txt</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- keep script.js path unchanged -->
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
