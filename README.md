@@ -7,6 +7,26 @@ Upload an audio file (or record from your mic), and the app runs a full pipeline
 
 ---
 
+## 📸 Screenshots
+
+### Main page — upload or record
+<p align="center">
+  <img src="pics/main-page.png" alt="Main page: drag-and-drop upload or in-browser recording" width="800">
+</p>
+
+### Speaker-attributed transcript
+<p align="center">
+  <img src="pics/transcript-section.png" alt="Color-coded transcript grouped by speaker" width="800">
+</p>
+
+### Talk-time breakdown & LLM analysis
+<p align="center">
+  <img src="pics/pie-chart.png" alt="Talk-time donut chart" width="380">
+  <img src="pics/analysis-rating.png" alt="Per-speaker relevance scoring and analysis card" width="380">
+</p>
+
+---
+
 ## ✨ Features
 
 - **Speaker diarization** — detects *who spoke when* (pyannote).
