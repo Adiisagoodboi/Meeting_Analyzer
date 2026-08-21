@@ -1,0 +1,29 @@
+speaker_id,speaker_name,start,end,text
+SPEAKER_03,Ravi,0.0,6.0,"Good morning, everyone.  This is Ravi speaking.  Can you all hear me clearly?"
+SPEAKER_00,Mira,6.0,10.0,"Yes, this is Mira.  I can hear you."
+SPEAKER_01,Meha,10.0,16.0,"This is Meha.  Yes, though there is some noise around me.  I'm in a cafe today.  What I'll manage."
+SPEAKER_02,Arjun,16.0,22.0,"Hi, this is Arjun.  I'm here too.  Loud and clear."
+SPEAKER_03,Ravi,22.0,27.0,Great.  So today's focus is the Devali campaign launch.
+SPEAKER_03,Ravi,28.0,34.0,"We'll talk about progress, pending tasks, and next steps.  Let's keep it efficient."
+SPEAKER_00,Mira,34.0,48.0,"I've completed the customer segmentation analysis.  We now have three main groups, young professionals, families and college students.  Families spend the most during last year's Devali.  So they should be our primary target."
+SPEAKER_01,Meha,48.0,56.0,I've drafted the social media calendar for Instagram and Facebook.  But Mira did your analysis also considering shopping trends.
+SPEAKER_00,Mira,56.0,62.0," That might affect when we post peak activities between 7 and 9 pm, so your plan works well."
+SPEAKER_02,Arjun,62.0,72.0,"I've finished the banner designs.  I think we should use brighter.  More traditional colors, since families are the main audience."
+SPEAKER_03,Ravi,72.0,80.0,"Good point.  But before we dive deeper into design, Sneha, have you finalized influencers for promotions?"
+SPEAKER_01,Meha,81.0,90.0,"Not yet, will we?  I got sidetracked yesterday checking trending reels.  But I've shortlisted five influencers, and I'll confirm by tomorrow."
+SPEAKER_03,Ravi,90.0,93.0," Please make sure that's done tomorrow, it's critical."
+SPEAKER_00,Mira,93.0,102.0,I also want to highlight that our email open rate has dropped by 5% compared to last quarter.  We may need to adjust subject lines for a more festive feel.
+SPEAKER_02,Arjun,102.0,113.0,"Sorry, you might hear some typing.  I'm updating Figma.  Yes Mira, I agree.  Maybe I can add festive emojis to the subject headers."
+SPEAKER_03,Ravi,113.0,117.0,Interesting idea.  Let's test it first.
+SPEAKER_01,Meha,117.0,126.0,"Oh, I forgot to mention, I uploaded the teaser video last night, but didn't add captions.  Should I re upload it with captions?"
+SPEAKER_03,Ravi,126.0,132.0,"Yes, captions are important.  Please fix that today.  I'll also take the task."
+SPEAKER_00,Mira,132.0,141.54,Sorry for the phone notification just now.  I'll also take the task of drafting new subject line variations for the emails.
+SPEAKER_02,Arjun,141.54,147.54,"Quit distraction, my food delivery just arrived.  Can we wrap up soon?"
+SPEAKER_03,Ravi,147.54,163.54,"Hold on, just one more point before we close.  We need to talk about budget.  We have a fixed budget of 1.5 lakhs.  Arjun, your new banner designs, will they need extra stock images or resources?"
+SPEAKER_02,Arjun,164.54,170.54," No, Ravi, I'm using licensed assets we already have, so no extra costs."
+SPEAKER_01,Meha,170.54,180.54,"For influencer promotions, though, we might exceed the budget slightly if we go for all 5 names.  I'd suggest finalizing only 3."
+SPEAKER_00,Mira,180.54,188.54,"That makes sense.  Families respond more to festive offers anyway, so maybe prioritize influencers who connect with family audiences."
+SPEAKER_03,Ravi,188.54,193.54,"Good suggestion.  Sneha, select 3 influencers within budget."
+SPEAKER_01,Meha,193.54,197.54,Got it.  I'll finalize the 3 end update tomorrow.
+SPEAKER_03,Ravi,197.54,219.54,"All right, to summarize, Mira has completed segmentation and will draft subject lines.  Arjun has finished banner designs and will test festive emojis in emails.  Sneha drafted the calendar but must finalize 3 influencers within budget and re-upload the teaser with captions.  We are on track, but please close these tasks by tomorrow."
+SPEAKER_03,Ravi,220.54,224.54,"Thanks, everyone.  Meeting adjourned."

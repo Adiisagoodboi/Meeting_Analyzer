@@ -1,0 +1,30 @@
+# ---- Meeting Analyzer — direct dependencies ----
+# Python 3.11 recommended. Also requires ffmpeg on PATH (system install).
+# For GPU torch, install the matching build from https://pytorch.org first.
+
+# Frontend (Flask proxy) + worker (FastAPI)
+Flask==3.1.3
+flask-cors==6.0.5
+Werkzeug==3.1.3
+requests==2.34.2
+fastapi==0.139.0
+uvicorn==0.51.0
+python-multipart==0.0.32
+
+# Config
+python-dotenv==1.0.1
+
+# ASR
+faster-whisper==1.2.1
+
+# Diarization
+pyannote.audio==4.0.7
+torch==2.13.0
+torchaudio==2.11.0
+
+# LLM analysis
+openai==2.45.0
+
+# Visualization / data
+matplotlib==3.11.0
+numpy==2.4.6
